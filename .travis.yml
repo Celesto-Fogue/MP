@@ -6,9 +6,8 @@ node_js:
 cache:
   directories:
     - node_modules
-
-mathjs:
-  -"8.1.1"
+script:
+  - npm test
 deploy:
  provider: heroku
  api-key:
@@ -16,3 +15,4 @@ deploy:
 app:
   main: 1.2
   staging: library-staging
+  mathjs": "^8.1.1
