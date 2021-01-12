@@ -6,9 +6,7 @@ node_js:
 cache:
   directories:
     - node_modules
-script:
-  - npm test
-  - npm run build
+
 mathjs:
   -"8.1.1"
 deploy:
