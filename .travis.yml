@@ -7,5 +7,5 @@ deploy:
  api-key:
   secure: $HEROKU_API_KEY
 app:
-  main: library-production
+  main: 1.2
   staging: library-staging
