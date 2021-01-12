@@ -12,5 +12,4 @@ deploy:
  api-key:
   secure: $HEROKU_API_KEY
 app:
-  main: 1.2
-  staging: mathjs
+  main: main
