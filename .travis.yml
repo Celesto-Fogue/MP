@@ -2,6 +2,15 @@ language: node_js
 
 node_js:
   - "10.19.0"
+
+cache:
+  directories:
+    - node_modules
+script:
+  - npm test
+  - npm run build
+mathjs:
+  -"8.1.1"
 deploy:
  provider: heroku
  api-key:
