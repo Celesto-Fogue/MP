@@ -14,5 +14,4 @@ deploy:
   secure: $HEROKU_API_KEY
 app:
   main: 1.2
-  staging: library-staging
-  mathjs": "^8.1.1
+  staging: mathjs
