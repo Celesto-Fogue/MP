@@ -1,57 +1,33 @@
-import React, { useState } from 'react';
-import TodoForm from './TodoForm';
-import Todo from './Todo';
+import React,{Component} from 'react';
 
-function TodoList() {
-  const [todos, setTodos] = useState([]);
+class TodoList extends Component{
 
-  const addTodo = todo => {
-    if (!todo.text || /^\s*$/.test(todo.text)) {
-      return;
+
+
+    render(){
+        //console.log(this.props);
+        const styles ={
+            todoList:{
+                padding: '4px',
+                border: '3px',
+                color: '#adadad',
+                background: '#fff',
+                border: 'solid 1px #e9e9e9',
+                cursor: 'pointer',
+                boxshadow: '0px 0px 14px 0px rgba(0,0,0,0.1)',
+                transition: 'transform .2s ease'
+            }
+
+        }
+        return(
+            <ul style={styles.todoList}>
+                {this.props.items.map(item =>(
+                    <li key={item.id}>{item.text}</li>
+                ))}
+            </ul>
+        )
     }
 
-    const newTodos = [todo, ...todos];
-
-    setTodos(newTodos);
-    console.log(...todos);
-  };
-
-  const updateTodo = (todoId, newValue) => {
-    if (!newValue.text || /^\s*$/.test(newValue.text)) {
-      return;
-    }
-
-    setTodos(prev => prev.map(item => (item.id === todoId ? newValue : item)));
-  };
-
-  const removeTodo = id => {
-    const removedArr = [...todos].filter(todo => todo.id !== id);
-
-    setTodos(removedArr);
-  };
-
-  const completeTodo = id => {
-    let updatedTodos = todos.map(todo => {
-      if (todo.id === id) {
-        todo.isComplete = !todo.isComplete;
-      }
-      return todo;
-    });
-    setTodos(updatedTodos);
-  };
-
-  return (
-    <>
-      <h1>What's the Plan for Today?</h1>
-      <TodoForm onSubmit={addTodo} />
-      <Todo
-        todos={todos}
-        completeTodo={completeTodo}
-        removeTodo={removeTodo}
-        updateTodo={updateTodo}
-      />
-    </>
-  );
 }
 
 export default TodoList;
