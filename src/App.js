@@ -10,7 +10,7 @@ class App extends Component {
   constructor(props){
       super(props);
       this.state = {
-          items: [{text:'todo1', id: '33445'}],
+          items: [{text:'Programme', id: '33445'}],
           noteText : '',
       };
  
@@ -49,12 +49,12 @@ class App extends Component {
       <div className="App">
          
           <div className="container" >
-              <div className="header">React Todo Application</div>
+              <div className="header">Mise En Production</div>
               <TodoList items={this.state.items}/>
 
             <form >
               <input type="text"
-                     placeholder="What needs to be done? ..."
+                     placeholder="A faire ?..."
                      ref={((input) => {this.textInput = input})}
                      className="textInput"
                      value={this.state.noteText}
