@@ -12,6 +12,6 @@ deploy:
  api-key:
   secure: $HEROKU_API_KEY
 
-app: library-production
+app: 1-5.4
   on:
-    branch: continuos-deployment
+    branch: main
