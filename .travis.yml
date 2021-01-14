@@ -3,6 +3,10 @@ language: node_js
 node_js:
   - "10.19.0"
 
+before_script:
+- npm install
+script:
+- npm run build
 
 deploy:
  provider: heroku
